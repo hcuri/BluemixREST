@@ -44,7 +44,9 @@ router.route('/bears')
     .post(function(req, res) {
         
         var bear = new Bear();      // create a new instance of the Bear model
-        bear.name = req.body.name;  // set the bears name (comes from the request)
+        if(req.body.name) bear.name = req.body.name;
+        if(req.body.age) bear.age = req.body.age;
+        if(req.body.occupation) bear.occupation = req.body.occupation;
 
         // save the bear and check for errors
         bear.save(function(err) {
@@ -88,7 +90,10 @@ router.route('/bears/:bear_id')
             if (err)
                 res.send(err);
 
-            bear.name = req.body.name;  // update the bears info
+            // update the bears info
+            if(req.body.name) bear.name = req.body.name;
+            if(req.body.age) bear.age = req.body.age;
+            if(req.body.occupation) bear.occupation = req.body.occupation;
 
             // save the bear
             bear.save(function(err) {
