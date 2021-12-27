@@ -7,10 +7,10 @@
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/hcuri/BluemixREST"
-		},
+	},
 	"dependencies": {
 		"body-parser": "^1.14.1",
 		"express": "^4.13.3",
-		"mongoose": "^4.2.4"
-		}
+		"mongoose": "^6.1.3"
+	}
 }
